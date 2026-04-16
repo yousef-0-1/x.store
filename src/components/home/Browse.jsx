@@ -6,7 +6,7 @@ export const Browse = () => {
   return (
     <section className="my-20">
       <div className="container rounded-3xl bg-[#F0F0F0] p-15">
-        <h2 className="heading mb-10 max-lg:font-size[25px]">
+        <h2 className="heading mb-10 max-lg:!text-[30px]">
           Browse by dress style
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">

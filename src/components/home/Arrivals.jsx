@@ -13,9 +13,9 @@ export const Arrivals = () => {
   const displayProducts = products.slice(0, expand ? 4 : 8);
 
   return (
-    <section className="arrivals py-12 max-lg:font-size[25px]">
+    <section className="arrivals py-12">
       <div className="container mx-auto px-4">
-        <h2 className="heading mb-10">New Arrivals</h2>
+        <h2 className="heading mb-10 lg:!font-size[25px]">New Arrivals</h2>
         <div className="flex flex-row lg:hidden">
           <Swiper spaceBetween={16} slidesPerView={1.5} centeredSlides={false}>
             {displayProducts.map((item) => (

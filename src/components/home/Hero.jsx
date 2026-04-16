@@ -13,10 +13,10 @@ const Stats = (props) => {
 export const Hero = () => {
   return (
     <div>
-      <section className="bg-[#f3f0f1] p-10 overflow-hidden">
+      <section className="bg-[#f3f0f1] p-5 lg:p-10 overflow-hidden">
         <div className="container flex flex-col items-center gap-10 lg:flex-row">
           <div className="z-1 w-[60%] flex flex-col gap-10 max-lg:w-[100%] max-lg:items-center">
-            <h1 className="Integral-CF not-italic text-[64px] font-bold leading-[64px]">
+            <h1 className="Integral-CF not-italic text-[40px] leading-[1] lg:text-[64px] font-bold lg:leading-[64px]">
               FIND CLOTHES THAT MATCHES YOUR STYLE
             </h1>
             <p className="opacity-60">
