@@ -25,7 +25,7 @@ export const Hero = () => {
               of style.
             </p>
             <Button btnName="Shop Now" btnClass="lg:w-55 w-[100%]" />
-            <div className="stats flex gap-10 items-center flex-wrap lg:flex-nowrap justify-center">
+            <div className="stats flex gap-10 items-center flex-wrap lg:flex-nowrap max-lg:justify-center">
               <Stats
                 num="200+"
                 disc="International Brands"
@@ -82,7 +82,7 @@ export const Hero = () => {
           </div>
         </div>
       </section>
-      <div className="brands bg-black p-7 w-[100%] mt-[-10px] z-[5] relative">
+      <div className="brands bg-black p-7 w-[100%] mt-[-10px] z-[3] relative">
         <div className="container flex justify-center gap-4 lg:justify-between flex-wrap lg:flex-nowrap ">
           <p className="text-white text-[40px] font-[Versace] tracking-widest uppercase max-lg:text-[25px]">
             Versace

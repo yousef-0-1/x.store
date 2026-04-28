@@ -2,9 +2,9 @@ import { Button } from "../components/common/Button";
 import { IoMdMail } from "react-icons/io";
 export const Contact = () => {
   return (
-    <section>
-      <div className="container flex justify-between max-lg:flex-col lg:gap-30 gap-10 bg-black p-10 rounded-[30px]">
-        <h2 className="heading !p-0 !text-left max-lg:!text-[30px] text-white mt-2 leading-[1.2]">
+    <section className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-max max-lg:w-full container">
+      <div className=" flex justify-between max-lg:flex-col max-lg:items-center lg:gap-30 gap-10 bg-black p-10 rounded-[30px]">
+        <h2 className="heading !p-0 !text-left max-lg:!text-[30px] text-white leading-[1.2] content-center">
           stay upto date about our latest offers
         </h2>
         <div className="email flex flex-col gap-4 w-full max-w-[450px]">

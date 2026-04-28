@@ -7,10 +7,6 @@
   --container-xl: 970px;
   --container-lg: 720px;
 }
-
-/* Tailwind v4 currently doesn't support '--container-center: true' in the @theme block yet. 
-   To make it "The Tailwind Way," you just add this one CSS rule below the import: */
-
 @layer components {
   .container {
     @apply mx-auto px-4;
@@ -99,8 +95,8 @@
     display: flex;
     z-index: 4;
     font-size: 20px;
+    align-items: center;
   }
-
   .active-drop {
     transform: translateX(0);
   }
@@ -126,8 +122,8 @@
   opacity: 0.5;
 }
 .my-swiper .swiper-slide-active {
-  filter: blur(0px) !important;
-  opacity: 1 !important;
+  filter: blur(4px);
+  opacity: 0.5;
 }
 @media (min-width: 1024px) {
   .my-swiper .swiper-slide-active + .swiper-slide {
@@ -146,8 +142,14 @@
     filter: blur(0px) !important;
     opacity: 1 !important;
   }
+  /* .my-swiper .swiper-slide-active {
+    filter: blur(0px);
+    opacity: 1;
+  } */
+}
+@media (max-width: 1024px) {
   .my-swiper .swiper-slide-active {
-    filter: blur(4px);
-    opacity: 0.5;
+    filter: blur(0px);
+    opacity: 1;
   }
 }
