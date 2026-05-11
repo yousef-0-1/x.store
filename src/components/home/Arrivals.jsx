@@ -21,10 +21,10 @@ export const Arrivals = () => {
             {displayProducts.map((item) => (
               <SwiperSlide key={item.id}>
                 <ProductCard
-                  image={item.image}
+                  thumbnail={item.thumbnail}
                   name={item.title}
                   price={item.price}
-                  rating={item.rating?.rate || 0}
+                  rating={item.rating || 0}
                 />
               </SwiperSlide>
             ))}
@@ -34,10 +34,10 @@ export const Arrivals = () => {
           {displayProducts.map((item) => (
             <ProductCard
               key={item.id}
-              image={item.image}
+              thumbnail={item.thumbnail}
               name={item.title}
               price={item.price}
-              rating={item.rating?.rate || 0}
+              rating={item.rating || 0}
             />
           ))}
         </div>

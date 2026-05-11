@@ -6,9 +6,8 @@ import { FaGithub } from "react-icons/fa6";
 import paymentsIcons from "../assets/payicons.webp";
 export const Footer = () => {
   return (
-    <section className="bg-[#f0f0f0] p-20 max-lg:p-0 relative mt-30 max-lg:mt-50">
+    <section className="bg-[#f0f0f0] p-20 max-lg:p-0 ">
       <div className="container my-15 gap-10 flex max-lg:flex-col max-lg:pt-60 max-lg:gap-10">
-        <Contact />
         <div className="socials flex flex-col gap-10 flex-[0.35]">
           <h1 className="logo Integral-CF text-[32px] font-bold leading-[38px] flex items-center gap-2">
             X.store

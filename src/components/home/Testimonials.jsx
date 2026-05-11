@@ -4,7 +4,7 @@ import { FaStar } from "react-icons/fa";
 import { IoIosCheckmarkCircle } from "react-icons/io";
 import "swiper/css";
 import { useRef } from "react";
-export const Testmonials = () => {
+export const Testimonials = () => {
   const swiperRef = useRef(null);
   function nextSlideHandler() {
     swiperRef.current.slideNext();

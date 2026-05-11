@@ -2,7 +2,7 @@ import { Hero } from "../components/home/Hero";
 import { Arrivals } from "../components/home/Arrivals";
 import { TopSelling } from "../components/home/TopSelling";
 import { Browse } from "../components/home/Browse";
-import { Testmonials } from "../components/home/Testimonials";
+import { Testimonials } from "../components/home/Testimonials";
 export const Home = () => {
   return (
     <>
@@ -10,7 +10,7 @@ export const Home = () => {
       <Arrivals />
       <TopSelling />
       <Browse />
-      <Testmonials />
+      <Testimonials />
     </>
   );
 };
