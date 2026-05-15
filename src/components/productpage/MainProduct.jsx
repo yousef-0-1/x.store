@@ -80,7 +80,7 @@ export const MainProduct = () => {
               </span>
             </div>
             {product.discountPercentage ? (
-              <div className="product-price text-[24px] lg:text-[37px] font-normal font-[https://www.fontshare.com/fonts/satoshi] flex items-center gap-3">
+              <div className="product-price text-[24px] lg:text-[37px] font-normal flex items-center gap-3">
                 $
                 {Math.floor(
                   product.price -
@@ -101,30 +101,17 @@ export const MainProduct = () => {
             <div className="select-color">
               <h4 className="text-xl text-gray-600 mb-3">Select Colors</h4>
               <div className="colors flex gap-4">
-                <div
-                  onClick={() => setSelectedColor("#4F4631")}
-                  className={`w-[46px] h-[46px] lg:w-[37px] lg:h-[37px] bg-[#4F4631] rounded-full cursor-pointer flex items-center justify-center ${selectedColor === "#4F4631" ? "ring-2 ring-offset-2 ring-black" : ""}`}
-                >
-                  {selectedColor === "#4F4631" && (
-                    <FaCheck className="text-white text-sm" />
-                  )}
-                </div>
-                <div
-                  onClick={() => setSelectedColor("#314F4A")}
-                  className={`w-[46px] h-[46px] lg:w-[37px] lg:h-[37px] bg-[#314F4A] rounded-full cursor-pointer flex items-center justify-center ${selectedColor === "#314F4A" ? "ring-2 ring-offset-2 ring-black" : ""}`}
-                >
-                  {selectedColor === "#314F4A" && (
-                    <FaCheck className="text-white text-sm" />
-                  )}
-                </div>
-                <div
-                  onClick={() => setSelectedColor("#31344F")}
-                  className={`w-[46px] h-[46px] lg:w-[37px] lg:h-[37px] bg-[#31344F] rounded-full cursor-pointer flex items-center justify-center ${selectedColor === "#31344F" ? "ring-2 ring-offset-2 ring-black" : ""}`}
-                >
-                  {selectedColor === "#31344F" && (
-                    <FaCheck className="text-white text-sm" />
-                  )}
-                </div>
+                {["#4F4631", "#314F4A", "#31344F"].map((color) => (
+                  <div
+                    key={color}
+                    onClick={() => setSelectedColor(color)}
+                    className={`w-[46px] h-[46px] lg:w-[37px] lg:h-[37px] bg-[${color}] rounded-full cursor-pointer flex items-center justify-center ${selectedColor === color ? "ring-2 ring-offset-2 ring-black" : ""}`}
+                  >
+                    {selectedColor === color && (
+                      <FaCheck className="text-white text-sm" />
+                    )}
+                  </div>
+                ))}
               </div>
             </div>
             <hr className="opacity-10" />
