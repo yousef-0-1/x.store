@@ -104,8 +104,9 @@ export const MainProduct = () => {
                 {["#4F4631", "#314F4A", "#31344F"].map((color) => (
                   <div
                     key={color}
+                    style={{ backgroundColor: color }}
                     onClick={() => setSelectedColor(color)}
-                    className={`w-[46px] h-[46px] lg:w-[37px] lg:h-[37px] bg-[${color}] rounded-full cursor-pointer flex items-center justify-center ${selectedColor === color ? "ring-2 ring-offset-2 ring-black" : ""}`}
+                    className={`w-[46px] h-[46px] lg:w-[37px] lg:h-[37px] rounded-full cursor-pointer flex items-center justify-center ${selectedColor === color ? "ring-2 ring-offset-2 ring-black" : ""}`}
                   >
                     {selectedColor === color && (
                       <FaCheck className="text-white text-sm" />
