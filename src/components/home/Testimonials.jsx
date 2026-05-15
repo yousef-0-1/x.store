@@ -26,7 +26,7 @@ export const Testimonials = () => {
   ];
   return (
     <section>
-      <div className="container flex justify-between items-center mb-10">
+      <div className="container flex justify-between items-center">
         <h2 className="heading text-left !p-0 lg:!text-[40px] !text-[30px]">
           our happy customers
         </h2>

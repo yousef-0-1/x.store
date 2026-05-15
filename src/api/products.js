@@ -10,3 +10,13 @@ export const getProducts = async () => {
     return [];
   }
 };
+export const getProductById = async (id) => {
+  try {
+    const response = await fetch(`${BASE_URL}/product/${id}`);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+    return [];
+  }
+};

@@ -22,6 +22,7 @@ export const Arrivals = () => {
               <SwiperSlide key={item.id}>
                 <ProductCard
                   thumbnail={item.thumbnail}
+                  id={item.id}
                   name={item.title}
                   price={item.price}
                   rating={item.rating || 0}
@@ -34,6 +35,7 @@ export const Arrivals = () => {
           {displayProducts.map((item) => (
             <ProductCard
               key={item.id}
+              id={item.id}
               thumbnail={item.thumbnail}
               name={item.title}
               price={item.price}

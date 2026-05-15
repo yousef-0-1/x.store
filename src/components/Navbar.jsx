@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { NotificationBanner } from "./NotificationBanner";
+import { Link } from "react-router-dom";
 export const Navbar = () => {
   const [isDropdownActive, setIsDropdownActive] = useState(false);
   const dropdownRef = useRef(null);
@@ -46,7 +47,7 @@ export const Navbar = () => {
               fill="black"
             />
           </svg>
-          X.Shop
+          <Link to={"/"}>X.Shop</Link>
         </div>
         <ul
           ref={dropdownRef}
