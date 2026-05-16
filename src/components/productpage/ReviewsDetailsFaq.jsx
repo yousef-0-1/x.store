@@ -11,7 +11,7 @@ export const ReviewsDetailsFaq = ({ product }) => {
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
-            className={`relative pb-4 transition duration-200 text-base lg:text-xl font-medium ${
+            className={`relative pb-4 whitespace-nowrap gap-3 transition duration-200 text-base lg:text-xl font-medium ${
               activeTab === tab ? "" : "text-gray-400"
             } w-full cursor-pointer`}
           >

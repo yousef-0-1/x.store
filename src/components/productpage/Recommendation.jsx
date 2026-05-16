@@ -9,7 +9,7 @@ export const Recommendation = ({ product }) => {
   return (
     <section>
       <div className="container p-4">
-        <h2 className="heading">you might also like</h2>
+        <h2 className="heading mb-5">you might also like</h2>
         <div className="flex flex-row lg:hidden">
           <Swiper spaceBetween={16} slidesPerView={1.5} centeredSlides={false}>
             {related.slice(0, 4).map((item) => (
