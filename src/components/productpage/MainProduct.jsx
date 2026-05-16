@@ -113,7 +113,7 @@ export const MainProduct = ({ product }) => {
             <hr className="opacity-10" />
             <div className="select-size">
               <h4 className="text-xl text-gray-600 mb-3">Select Size</h4>
-              <div className="sizes flex gap-4 max-lg:justify-between">
+              <div className="sizes flex gap-1 lg:gap-4 max-lg:justify-between">
                 {["Small", "Medium", "Large", "X-Large"].map((size) => (
                   <div
                     key={size}
