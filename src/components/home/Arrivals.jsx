@@ -25,6 +25,7 @@ export const Arrivals = () => {
                   id={item.id}
                   name={item.title}
                   price={item.price}
+                  discountPercentage={item.discountPercentage}
                   rating={item.rating || 0}
                 />
               </SwiperSlide>
@@ -39,6 +40,7 @@ export const Arrivals = () => {
               thumbnail={item.thumbnail}
               name={item.title}
               price={item.price}
+              discountPercentage={item.discountPercentage}
               rating={item.rating || 0}
             />
           ))}

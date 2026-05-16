@@ -1,24 +1,18 @@
 import { ProductCard } from "../common/ProductCard";
 import { useProduct } from "../../hooks/useProduct";
-import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-export const TopSelling = () => {
-  const { topSell } = useProduct();
-  const [expand, setExpand] = useState(true);
-
-  if (!topSell) return null;
-  // why ? cuz the api doesn't provide much data so i had to do this to not get repeated items
-  const displayProducts = topSell.slice(1, expand ? 5 : 9);
-
+export const Recommendation = ({ product }) => {
+  const { products } = useProduct();
+  const related = products.filter(
+    (item) => item.tags.includes(product.tags[1]) && item.id !== product.id,
+  );
   return (
-    <section className="my-10">
-      <div className="top-sell container">
-        <hr className="opacity-20 my-10" />
-        <h2 className="heading max-lg:font-size[25px]">Top Selling</h2>
+    <section>
+      <div className="container p-4">
+        <h2 className="heading">you might also like</h2>
         <div className="flex flex-row lg:hidden">
           <Swiper spaceBetween={16} slidesPerView={1.5} centeredSlides={false}>
-            {displayProducts.map((item) => (
+            {related.slice(0, 4).map((item) => (
               <SwiperSlide key={item.id}>
                 <ProductCard
                   thumbnail={item.thumbnail}
@@ -32,8 +26,8 @@ export const TopSelling = () => {
             ))}
           </Swiper>
         </div>
-        <div className="hidden lg:grid grid-cols-4 gap-6">
-          {displayProducts.map((item) => (
+        <div className="gap-3 hidden lg:flex justify-center">
+          {related.slice(0, 4).map((item) => (
             <ProductCard
               key={item.id}
               id={item.id}
@@ -44,14 +38,6 @@ export const TopSelling = () => {
               rating={item.rating || 0}
             />
           ))}
-        </div>
-        <div className="hidden lg:flex justify-center mt-12">
-          <button
-            onClick={() => setExpand(!expand)}
-            className="px-14 py-3 border rounded-full hover:bg-[#d8d8d8] transition duration-300 cursor-pointer"
-          >
-            {expand ? "View More" : "View Less"}
-          </button>
         </div>
       </div>
     </section>

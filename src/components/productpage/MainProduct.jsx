@@ -1,18 +1,13 @@
-import { Link, useParams } from "react-router-dom";
-import { FaStar, FaStarHalfAlt, FaRegStar, FaCheck } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { FaStar, FaStarHalf, FaRegStar, FaCheck } from "react-icons/fa";
 import { Plus, Minus } from "lucide-react";
 import { useState } from "react";
-import { useProductById } from "../../hooks/useProductById";
 import { Button } from "../common/Button";
-export const MainProduct = () => {
-  const { id } = useParams();
-  const { product } = useProductById(id);
+export const MainProduct = ({ product }) => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [selectedColor, setSelectedColor] = useState("#4F4631");
   const [selectedSize, setSelectedSize] = useState("Small");
   const [amount, setAmount] = useState(1);
-  if (!product.id) return null;
-
   const main = selectedImage ?? product.images[0];
   return (
     <section>
@@ -67,15 +62,15 @@ export const MainProduct = () => {
                     {product.rating >= starNumber ? (
                       <FaStar />
                     ) : product.rating >= starNumber - 0.5 ? (
-                      <FaStarHalfAlt />
+                      <FaStarHalf />
                     ) : (
-                      <FaRegStar />
-                    )}{" "}
+                      ""
+                    )}
                   </span>
                 );
               })}
               <span className="text-black ml-2">
-                {product.rating.toFixed(1)}/
+                {Math.round(product.rating)}/
                 <span className="text-gray-400">5</span>
               </span>
             </div>
@@ -85,7 +80,7 @@ export const MainProduct = () => {
                 {Math.floor(
                   product.price -
                     product.price * (product.discountPercentage / 100),
-                ) + ".99"}{" "}
+                )}{" "}
                 <b>
                   <del className="text-gray-500">{product.price}</del>
                 </b>

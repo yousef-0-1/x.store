@@ -1,6 +1,13 @@
-import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
+import { FaStar, FaStarHalf } from "react-icons/fa";
 import { Link } from "react-router-dom";
-export const ProductCard = ({ id, thumbnail, name, price, rating }) => {
+export const ProductCard = ({
+  id,
+  thumbnail,
+  name,
+  price,
+  discountPercentage,
+  rating,
+}) => {
   return (
     <Link to={`/product/${id}`}>
       <div className="product-card flex flex-col gap-2 cursor-pointer group ">
@@ -25,9 +32,9 @@ export const ProductCard = ({ id, thumbnail, name, price, rating }) => {
                   {rating >= starNumber ? (
                     <FaStar />
                   ) : rating >= starNumber - 0.5 ? (
-                    <FaStarHalfAlt />
+                    <FaStarHalf />
                   ) : (
-                    <FaRegStar />
+                    ""
                   )}
                 </span>
               );
@@ -38,7 +45,21 @@ export const ProductCard = ({ id, thumbnail, name, price, rating }) => {
           </span>
         </div>
 
-        <p className="text-2xl font-bold">${price}</p>
+        <div className="text-xl font-bold">
+          {discountPercentage ? (
+            <div className="product-price font-normal flex items-center gap-3">
+              ${(price - price * (discountPercentage / 100)).toFixed(0)}
+              <b>
+                <del className="text-gray-500">{price}</del>
+              </b>
+              <span className="ml-6 p-[3px] text-lg bg-[#ff33331a] text-[#FF3333] rounded-full">
+                -{discountPercentage}%
+              </span>
+            </div>
+          ) : (
+            price
+          )}
+        </div>
       </div>
     </Link>
   );
