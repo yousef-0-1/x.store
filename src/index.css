@@ -55,10 +55,16 @@
   font-weight: 100;
   font-style: normal;
 }
+@font-face {
+  font-family: "satoshi";
+  src: url("./assets/fonts/Satoshi_Complete/Fonts/OTF/Satoshi-Black.otf");
+}
 .Integral-CF {
   font-family: "Integral CF";
 }
-
+.satoshi {
+  font-family: "satoshi";
+}
 .search-bar {
   background: oklab(95.514% 0 -0.00011);
 }

@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import { FaStar, FaStarHalf, FaRegStar, FaCheck } from "react-icons/fa";
-import { Plus, Minus } from "lucide-react";
+import { Plus, Minus, ChevronRight } from "lucide-react";
 import { useState } from "react";
 import { Button } from "../common/Button";
+import { useCart } from "../../context/CartContext";
 export const MainProduct = ({ product }) => {
+  const { addToCart } = useCart();
   const [selectedImage, setSelectedImage] = useState(null);
   const [selectedColor, setSelectedColor] = useState("#4F4631");
   const [selectedSize, setSelectedSize] = useState("Small");
@@ -13,17 +15,17 @@ export const MainProduct = ({ product }) => {
     <section>
       <div className="container">
         <hr className="opacity-20 mb-5" />
-        <p className="text-gray-700 text-lg mb-8">
+        <p className="flex items-center gap-2 text-gray-700 text-lg mb-8">
           <Link to={"/"} className="hover:text-black">
             Home
           </Link>
-          {" › "}
+          <ChevronRight size={18} />
           <span className="hover:text-black cursor-pointer">Shop</span>
-          {" › "}
+          <ChevronRight size={18} />
           <span className="hover:text-black cursor-pointer">
             {product.category.includes("womens") ? "Women" : "Men"}
           </span>
-          {" › "}
+          <ChevronRight size={18} />
           <span className="text-black">{product.tags[1]}</span>
         </p>
         <div className="product-details flex gap-10 lg:gap-8 max-xl:flex-col">
@@ -140,7 +142,13 @@ export const MainProduct = ({ product }) => {
                   onClick={() => setAmount((a) => a + 1)}
                 />
               </div>
-              <Button btnName="Add to Cart" btnClass="text-xl flex-2" />
+              <Button
+                btnName="Add to Cart"
+                btnClass="text-xl flex-2"
+                onClick={() =>
+                  addToCart(product, amount, selectedSize, selectedColor)
+                }
+              />
             </div>
           </div>
         </div>
