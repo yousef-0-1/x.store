@@ -6,6 +6,7 @@ import {
   Minus,
   ShoppingBag,
 } from "lucide-react";
+import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import { Button } from "../components/common/Button";
@@ -161,7 +162,18 @@ export const CartPage = () => {
               <Button btnName="Apply" btnClass="px-5 py-3 text-sm" />
             </div>
 
-            <Button btnName="Go to Checkout →" btnClass="w-full py-4 text-lg" />
+            <Button
+              btnName="Go to Checkout →"
+              btnClass="w-full py-4 text-lg"
+              onClick={() =>
+                Swal.fire({
+                  title: "Order Placed!",
+                  text: "Thank you for your purchase.",
+                  icon: "success",
+                  confirmButtonColor: "#000",
+                })
+              }
+            />
           </div>
         </div>
       ) : (
