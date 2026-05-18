@@ -12,6 +12,11 @@
     @apply mx-auto px-4;
   }
 }
+@import url("https://googleapis.com");
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+}
 
 /* Start global rules */
 /* Font  */

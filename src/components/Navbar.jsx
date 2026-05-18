@@ -32,9 +32,11 @@ export const Navbar = () => {
         <ul
           className={`links lg:static lg:flex lg:flex-row lg:justify-between gap-5 ${isDropdownActive ? "active-drop" : ""}`}
         >
-          <li className="flex items-center gap-1">
-            Shop <ChevronDown size={18} />
-          </li>
+          <Link to={"/shop"}>
+            <li className="flex items-center gap-1">
+              Shop <ChevronDown size={18} />
+            </li>
+          </Link>
           <li>On Sale</li>
           <li>New Arrivals</li>
           <li>Brands</li>
