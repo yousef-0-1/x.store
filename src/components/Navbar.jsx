@@ -3,16 +3,22 @@ import { Menu, Search, ShoppingCart, User, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import { NotificationBanner } from "./NotificationBanner";
 import { useCart } from "../context/CartContext";
+import { useProduct } from "../hooks/useProduct";
 export const Navbar = () => {
   const [isDropdownActive, setIsDropdownActive] = useState(false);
   const { cart } = useCart();
+  const { products } = useProduct();
+  const [query, setQuery] = useState("");
+  const filteredItems = products.filter((item) =>
+    item.title.toLowerCase().includes(query.toLowerCase()),
+  );
   function dropDownHandler() {
     setIsDropdownActive((prev) => !prev);
   }
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-
+  const [isFocused, setIsFocused] = useState(false);
   return (
-    <>
+    <section className="relative">
       {isDropdownActive && (
         <div
           className="fixed inset-0 z-3 lg:hidden"
@@ -47,6 +53,10 @@ export const Navbar = () => {
             className="flex-1"
             type="text"
             placeholder="Search For Products..."
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            onFocus={() => setIsFocused(true)}
+            onBlur={() => setIsFocused(false)}
           />
         </div>
         <div className="cart-acc flex items-center justify-between gap-2">
@@ -82,6 +92,24 @@ export const Navbar = () => {
           </div>
         </div>
       )}
-    </>
+      <div
+        className={`container ${query.trim() === "" || isFocused === false ? "hidden" : "block"}`}
+      >
+        <ul className=" absolute top-35 bg-white w-[95%] z-10 left-[50%] translate-x-[-50%] rounded-xl p-3">
+          {filteredItems.map((item) => (
+            <Link
+              key={item.id}
+              to={`/product/${item.id}`}
+              onClick={() => setQuery("")}
+            >
+              <li className="p-1 hover:bg-[#f0f0f0] rounded-lg cursor-pointer flex items-center h-14 w-full">
+                <img src={item.thumbnail} alt={item.title} className="w-19" />
+                <h3>{item.title}</h3>
+              </li>
+            </Link>
+          ))}
+        </ul>
+      </div>
+    </section>
   );
 };

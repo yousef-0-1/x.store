@@ -20,7 +20,7 @@ export const ProductCard = ({
             loading="lazy"
           />
         </div>
-        <h4 className="text-lg md:text-xl font-bold line-clamp-1 mt-2">
+        <h4 className="text-lg md:text-xl font-bold line-clamp-1 mt-2 hover:text-gray-800 transition">
           {name}
         </h4>
         <div className="flex items-center gap-2">

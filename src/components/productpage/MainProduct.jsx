@@ -20,7 +20,9 @@ export const MainProduct = ({ product }) => {
             Home
           </Link>
           <ChevronRight size={18} />
-          <span className="hover:text-black cursor-pointer">Shop</span>
+          <Link to={"/shop"}>
+            <span className="hover:text-black cursor-pointer">Shop</span>
+          </Link>
           <ChevronRight size={18} />
           <span className="hover:text-black cursor-pointer">
             {product.category.includes("womens") ? "Women" : "Men"}

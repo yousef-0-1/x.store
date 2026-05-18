@@ -8,7 +8,6 @@ export const ShopPage = () => {
   const [openFilters, setOpenFilters] = useState(false);
   function openHandler() {
     setOpenFilters((prev) => !prev);
-    console.log(openFilters);
   }
   return (
     <section className="relative">
@@ -24,7 +23,7 @@ export const ShopPage = () => {
       </div>
       <SideFilter
         openHandler={openHandler}
-        className={`lg:hidden sticky top-5 ${openFilters ? "!block !absolute h-full !top-0 w-full left-0 z-3" : ""}`}
+        className={`lg:hidden sticky top-5 ${openFilters ? "!block !absolute h-full !top-15 w-full left-0 z-3" : ""}`}
       />
       <div className="container relative flex justify-between gap-3 ">
         <SideFilter className={`sticky top-5`} />

@@ -20,9 +20,9 @@ export const SideFilter = ({ className, openHandler }) => {
           {["T-shirts", "Shorts", "Shirts", "Hoodie", "Jeans"].map((cate) => (
             <div
               key={cate}
-              className="filter-head flex justify-between text-gray-500 my-[6px]"
+              className="filter-head flex justify-between text-gray-500 hover:text-gray-900 my-[6px] cursor-pointer "
             >
-              <h3 className=" text-gray-500 font-medium font-sans">{cate}</h3>
+              <h3 className=" font-medium font-sans">{cate}</h3>
               <ChevronRight size={20} />
             </div>
           ))}

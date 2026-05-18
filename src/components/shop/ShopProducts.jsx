@@ -23,12 +23,11 @@ export const ShopProducts = ({ openHandler }) => {
                 Most Popular <ChevronDown size={18} />
               </span>
             </span>
-            <div className="lg:hidden p-3 rounded-full bg-[#F0F0F0] cursor-pointer">
-              <SlidersHorizontal
-                className="rotate-90 text-black"
-                size={20}
-                onClick={() => openHandler()}
-              />
+            <div
+              className="lg:hidden p-3 rounded-full bg-[#F0F0F0] cursor-pointer"
+              onClick={() => openHandler()}
+            >
+              <SlidersHorizontal className="rotate-90 text-black" size={20} />
             </div>
           </div>
         </div>
