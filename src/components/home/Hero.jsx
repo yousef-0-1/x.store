@@ -25,8 +25,8 @@ export const Hero = () => {
               designed to bring out your individuality and cater to your sense
               of style.
             </p>
-            <Link to={"/shop"}>
-              <Button btnName="Shop Now" btnClass="lg:w-55 w-[100%]" />
+            <Link to={"/shop"} className="lg:w-55 w-[100%]">
+              <Button btnName="Shop Now" />
             </Link>
             <div className="stats flex gap-10 items-center flex-wrap lg:flex-nowrap max-lg:justify-center">
               <Stats
