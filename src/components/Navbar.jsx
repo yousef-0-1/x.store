@@ -9,14 +9,20 @@ export const Navbar = () => {
   const { cart } = useCart();
   const { products } = useProduct();
   const [query, setQuery] = useState("");
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
   const filteredItems = products.filter((item) =>
     item.title.toLowerCase().includes(query.toLowerCase()),
   );
   function dropDownHandler() {
     setIsDropdownActive((prev) => !prev);
   }
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [isFocused, setIsFocused] = useState(false);
+  const handleBlur = () => {
+    setTimeout(() => {
+      setIsFocused(false);
+    }, 150);
+  };
+
   return (
     <section className="relative">
       {isDropdownActive && (
@@ -56,7 +62,7 @@ export const Navbar = () => {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             onFocus={() => setIsFocused(true)}
-            onBlur={() => setIsFocused(false)}
+            onBlur={handleBlur}
           />
         </div>
         <div className="cart-acc flex items-center justify-between gap-2">
@@ -88,6 +94,10 @@ export const Navbar = () => {
               type="text"
               placeholder="Search For Products..."
               autoFocus
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              onFocus={() => setIsFocused(true)}
+              onBlur={handleBlur}
             />
           </div>
         </div>
