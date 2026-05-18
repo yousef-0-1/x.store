@@ -26,7 +26,7 @@ export const Hero = () => {
               of style.
             </p>
             <Link to={"/shop"} className="lg:w-55 w-[100%]">
-              <Button btnName="Shop Now" />
+              <Button btnName="Shop Now" btnClass="w-full" />
             </Link>
             <div className="stats flex gap-10 items-center flex-wrap lg:flex-nowrap max-lg:justify-center">
               <Stats
