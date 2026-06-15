@@ -10,4 +10,4 @@
 ## Tech Stack
 * Frontend: React, TailwindCSS, [TypeScript/ES6 JavaScript]
 * Routing & State: React Router DOM, [Your State Library]
-* Hosting:** Vercel (Continuous Deployment via GitHub Actions)
+* Hosting: Vercel (Continuous Deployment via GitHub Actions)
